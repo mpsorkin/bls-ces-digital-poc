@@ -1,0 +1,88 @@
+================================================================================
+  HOW TO RUN THE BLS CES DIGITAL SURVEY SYSTEM
+================================================================================
+
+EASIEST WAY (Windows):
+---------------------
+1. Double-click "start-both.bat" in this folder
+2. Wait for two windows to open (backend and frontend)
+3. Wait for both to show "listening" messages
+4. Open http://localhost:3000 in your browser
+
+MANUAL WAY:
+-----------
+
+STEP 1: Start Backend
+---------------------
+Open Command Prompt or PowerShell and run:
+
+    cd C:\Users\mps62\bls-ces-digital\backend\BLS.CES.API
+    dotnet restore
+    dotnet run
+
+Wait for: "Now listening on: http://localhost:5000"
+KEEP THIS WINDOW OPEN!
+
+
+STEP 2: Start Frontend (in a NEW terminal window)
+--------------------------------------------------
+Open a NEW Command Prompt or PowerShell and run:
+
+    cd C:\Users\mps62\bls-ces-digital\frontend
+    npm install
+    npm run dev
+
+Wait for: "Local: http://localhost:3000"
+KEEP THIS WINDOW OPEN!
+
+
+STEP 3: Open in Browser
+----------------------
+Open your web browser and go to:
+    http://localhost:3000
+
+You should see the Dashboard with sample data!
+
+
+WHAT YOU'LL SEE:
+---------------
+✓ Dashboard page with charts and statistics
+✓ "Submit Survey" button to test the form
+✓ "View Submissions" to see all data
+✓ Sample data from 6 businesses already loaded
+
+
+TROUBLESHOOTING:
+---------------
+- If you see "dotnet: command not found"
+  → Install .NET 8.0 SDK from https://dotnet.microsoft.com/download
+
+- If you see "npm: command not found"
+  → Install Node.js from https://nodejs.org/
+
+- If port 5000 or 3000 is in use
+  → Close other applications using those ports
+
+- If you see CORS errors
+  → Make sure backend is running on port 5000
+  → Check that both servers are running
+
+- If dashboard is empty
+  → Restart the backend (it will reload sample data)
+
+
+QUICK TEST:
+----------
+1. Visit http://localhost:5000/swagger → Should see API documentation
+2. Visit http://localhost:3000 → Should see dashboard
+3. Click "Submit Survey" → Fill out form → Submit
+4. Click "View Submissions" → See your new submission
+
+
+STOPPING:
+--------
+Press Ctrl+C in both terminal windows to stop the servers.
+
+
+For more details, see RUN.md
+
